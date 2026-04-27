@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>메뉴 상세 — 맛있는 집</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header header--sub">
+    <a class="header__back" href="index.html">← 홈으로</a>
+    <div class="header__inner">
+      <p class="header__eyebrow">Pasta</p>
+      <h1 class="header__title" id="detail-title">메뉴</h1>
+      <p class="header__tagline" id="detail-header-desc"></p>
+    </div>
+  </header>
+
+  <main>
+    <p class="section detail-error" id="detail-error" hidden>잘못된 주소이거나 찾을 수 없는 메뉴입니다. <a href="index.html">홈으로</a></p>
+
+    <article class="detail-article" id="detail-article" hidden>
+      <div class="detail-hero">
+        <img class="detail-hero__img" id="detail-hero-img" src="" alt="" width="1200" height="800" />
+      </div>
+      <p class="detail-hero__desc" id="detail-desc"></p>
+
+      <section class="section" aria-labelledby="reviews-title">
+        <h2 class="section__title" id="reviews-title">이 메뉴 리뷰</h2>
+        <p class="section__desc">이 브라우저에만 저장됩니다. 별점·짧은 후기·(선택) 사진을 남겨보세요.</p>
+
+        <form class="review-form" id="review-form">
+          <div class="field">
+            <label for="reviewer-name">닉네임</label>
+            <input type="text" id="reviewer-name" name="name" required maxlength="24" placeholder="예: 김**" />
+          </div>
+          <div class="field">
+            <span class="field__label" id="rating-label">별점</span>
+            <div class="stars" id="star-input" role="group" aria-labelledby="rating-label"></div>
+          </div>
+          <div class="field">
+            <label for="review-text">후기</label>
+            <textarea id="review-text" name="text" rows="4" required maxlength="800" placeholder="이 메뉴에 대한 솔직한 후기를 남겨주세요."></textarea>
+          </div>
+          <div class="field">
+            <label for="review-image">리뷰 사진 (선택)</label>
+            <input type="file" id="review-image" name="reviewImage" accept="image/*" />
+          </div>
+          <button type="submit" class="btn btn--primary">리뷰 등록</button>
+        </form>
+
+        <ul class="review-list" id="review-list" aria-live="polite"></ul>
+        <p class="empty-hint" id="review-empty">아직 이 메뉴에 리뷰가 없습니다.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>맛있는 집 — <a href="index.html">홈</a> · <a href="manage.html">사진으로 메뉴 만들기</a></p>
+  </footer>
+
+  <script src="pastas.js"></script>
+  <script src="detail.js"></script>
+</body>
+</html>

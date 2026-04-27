@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>메뉴 관리 — 맛있는 집</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header header--sub">
+    <a class="header__back" href="index.html">← 홈으로</a>
+    <div class="header__inner">
+      <p class="header__eyebrow">관리</p>
+      <h1 class="header__title">내 메뉴 만들기</h1>
+      <p class="header__tagline">직접 사진을 올려 메뉴별 리뷰를 쌓을 수 있어요.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading" class="section__title">안내</h2>
+      <p class="intro__text">
+        음식 사진마다 <strong>메뉴 이름</strong>을 붙이고, 그 음식에 대한 <strong>리뷰만</strong> 아래에 모여 보입니다.
+        (데이터는 <strong>이 브라우저에만</strong> 저장됩니다.)
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="food-section-heading">
+      <h2 id="food-section-heading" class="section__title">음식 사진 &amp; 메뉴별 리뷰</h2>
+      <p class="section__desc">사진을 올리면 항목이 생깁니다. 메뉴명을 바꾼 뒤, 그 박스에서만 후기를 남기면 해당 음식 리뷰로 저장됩니다. (권장: 한 장 1MB 이하, 최대 12개 메뉴)</p>
+
+      <form class="upload-form" id="photo-form">
+        <label class="file-input">
+          <input type="file" id="photo-input" accept="image/*" multiple />
+          <span class="file-input__label">음식 사진 추가</span>
+        </label>
+        <button type="button" class="btn btn--ghost" id="clear-photos">모든 메뉴 항목 지우기</button>
+      </form>
+
+      <div class="food-list" id="food-list" aria-live="polite"></div>
+      <p class="empty-hint" id="food-empty">아직 음식 사진이 없습니다. 위에서 사진을 선택해 항목을 만든 뒤, 메뉴별로 리뷰를 남겨 보세요.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>맛있는 집 — <a href="index.html">홈(파스타 메뉴)</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
