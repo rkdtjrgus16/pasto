@@ -27,9 +27,13 @@
 - `home.js`, `detail.js`, `app.js` — 각 화면 동작  
 - `styles.css` — 스타일
 
-## Git — 원격 푸시
+## Git — 복사해서 푸시 (Ctrl+C / Ctrl+V)
 
-원격 저장소가 없다면 GitHub에서 빈 저장소를 만든 뒤:
+1. GitHub에서 빈 저장소를 만듭니다.  
+2. **`COPY-PASTE.txt`** 를 열어 **맨 위 `$URL` 한 줄만** 본인 저장소 주소로 바꾼 뒤, **그 파일 안의 코드 블록 전체**를 PowerShell에 붙여넣고 Enter 하면 `add → commit → push` 까지 됩니다.  
+3. 또는 `push-to-github.ps1` 안의 `$GitHubRepoUrl` 만 수정한 뒤 같은 폴더에서 `.\push-to-github.ps1` 를 실행해도 됩니다.
+
+수동으로 하려면:
 
 ```bash
 git remote add origin https://github.com/사용자명/저장소명.git

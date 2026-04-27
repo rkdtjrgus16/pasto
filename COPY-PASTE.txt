@@ -1,0 +1,21 @@
+========================================
+아래 박스 전체를 복사(Ctrl+C) → PowerShell에 붙여넣기(Ctrl+V) → Enter
+(맨 윗줄 $URL 만 본인 GitHub 저장소 주소로 바꾸세요. 처음이든 매번이든 이 한 덩어리로 됩니다.)
+========================================
+
+$URL = "https://github.com/사용자명/저장소명.git"
+Set-Location -LiteralPath "c:\Users\Administrator\Desktop\바이브코딩 (기초반)\연습2"
+$g = if (Test-Path "C:\Program Files\Git\bin\git.exe") { "C:\Program Files\Git\bin\git.exe" } else { "git" }
+$hasOrigin = $false; foreach ($l in (& $g remote 2>$null)) { if ($l -eq "origin") { $hasOrigin = $true } }
+if (-not $hasOrigin) { & $g remote add origin $URL }
+& $g add -A
+$st = & $g status --porcelain; if ($st) { & $g commit -m ("update: " + (Get-Date -Format "yyyy-MM-dd HH:mm")) }
+& $g branch -M main
+& $g push -u origin main
+
+========================================
+[참고] push-to-github.ps1 을 쓰려면: 파일 안 $GitHubRepoUrl 만 수정 후
+  Set-Location "c:\Users\Administrator\Desktop\바이브코딩 (기초반)\연습2"
+  Set-ExecutionPolicy -Scope Process -Bypass
+  .\push-to-github.ps1
+========================================
